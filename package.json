@@ -1,0 +1,71 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "Hello World!",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "build": "electron-builder --win --x64"
+  },
+  "author": "LHC",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "electron": "^15.3.0",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "build": {
+    "productName":"ELECTRON_STUDY",
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true, 
+      "allowToChangeInstallationDirectory": true, 
+      "installerIcon": "./resources/icon1.ico",
+      "uninstallerIcon": "./resources/icon1.ico",
+      "installerHeaderIcon": "./resources/icon1.ico", 
+      "createDesktopShortcut": true, 
+      "createStartMenuShortcut": true,
+      "shortcutName": "我的快捷方式"
+    },
+    "win": {
+      "icon": "resources/icon1.ico"
+    }
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "my_electron_app"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+confirm('这是您的第一个 Electron 应用！')
