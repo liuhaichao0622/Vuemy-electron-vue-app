@@ -8,6 +8,11 @@ npx electron-forge import
 2.使用 Forge 的 make 命令来创建可分发的应用程序：
 npm run make
 
+
+### electron-builder 打包应用
+npm run build 【推荐使用】
+
+
 ### 参考链接：
 1.帮助文档 https://www.electronjs.org/zh/docs/latest/tutorial/quick-start#scaffold-the-project
 2.在线制作ico http://www.ico51.cn/

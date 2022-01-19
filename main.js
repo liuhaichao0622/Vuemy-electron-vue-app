@@ -3,6 +3,11 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
+require('./server/bin/www');  // 引用node server
+
+// 禁用安全策略的设置告警
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
+
 function createWindow() {
     // 创建浏览器窗口
     const mainWindow = new BrowserWindow({
@@ -14,7 +19,7 @@ function createWindow() {
     })
 
     // mainWindow.loadFile('index.html')
-    mainWindow.loadFile('./client/dist/index.html')
+    mainWindow.loadFile('./client/build/index.html')
 
     // 打开开发工具
     // mainWindow.webContents.openDevTools()
