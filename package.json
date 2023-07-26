@@ -11,8 +11,8 @@
     "server-react": "cross-env NODE_ENV=development && node ./server/bin/www",
     "dev-server-react": "cross-env NODE_ENV=development && nodemon ./server/bin/www",
     "prod-server-ract": "cross-env NODE_ENV=production pm2 start ./server/bin/www",
-    "start-server": "node ./client/scripts/start",
-    "build-react": "node ./client/scripts/build",
+    "start-react": "set NODE_OPTIONS=--openssl-legacy-provider && node ./client/scripts/start",
+    "build-react": "set NODE_OPTIONS=--openssl-legacy-provider && node ./client/scripts/build",
     "test": "node ./client/scripts/test"
   },
   "author": "LHC",
